@@ -1,0 +1,6 @@
+alter table t1
+add constraint fk_t2
+foreign key t2_id references t2(t2_id);
+
+alter table t1
+add column newcol int;

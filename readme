@@ -1,0 +1,165 @@
+API Endpoints and CRUD Operations
+
+1. Vehicle Registration
+Objective: Manage user vehicle registrations.
+Endpoints:
+POST /vehicles: Register a new vehicle.
+GET /vehicles: Retrieve all registered vehicles.
+PUT /vehicles/<vehicle_id>: Update vehicle details.
+DELETE /vehicles/<vehicle_id>: Remove a vehicle from the system.
+Problem Solved: Automates vehicle registration with easy access and management.
+
+2. Traffic Signal Management
+Objective: Allow authorities to manage traffic signals.
+Endpoints:
+GET /signals: Get current traffic signal settings.
+PUT /signals/<signal_id>: Update signal timings based on real-time data.
+Problem Solved: Enables dynamic traffic flow adjustments, reducing congestion.
+
+3. Real-time Traffic Monitoring
+Objective: Monitor live traffic conditions using sensors and cameras.
+Endpoints:
+GET /traffic: Fetch real-time traffic data from sensors.
+Problem Solved: Provides actionable insights to authorities for better traffic management.
+
+4. Violation Detection and Management
+Objective: Detect traffic violations and manage reports.
+Endpoints:
+POST /violations: Add a new violation record.
+GET /violations: Retrieve all violations.
+PUT /violations/<violation_id>: Update a violation record (e.g., payment status).
+DELETE /violations/<violation_id>: Remove a violation record.
+Problem Solved: Automates violation detection and simplifies fine management.
+
+5. Violation Report Generation
+Objective: Generate reports for detected violations.
+Endpoints:
+POST /reports: Create a violation report.
+GET /reports: Retrieve all generated reports.
+DELETE /reports/<report_id>: Remove a report.
+Problem Solved: Streamlines the reporting process, ensuring comprehensive records.
+
+6. Dynamic Signal Adjustment
+Objective: Adjust signal timings automatically based on traffic data.
+Endpoints:
+PUT /adjust_signal/<signal_id>: Modify signal timings dynamically.
+Problem Solved: Reduces delays and optimizes traffic flow.
+
+7. Media Storage Integration
+Objective: Store and retrieve violation-related media files.
+Endpoints:
+POST /media: Upload media files to AWS S3.
+GET /media/<file_id>: Retrieve stored media.
+DELETE /media/<file_id>: Delete media from AWS S3.
+Problem Solved: Ensures scalable and secure storage of large media files.  
+
+
+
+
+
+**********************************************************************************
+**********************************************************************************
+
+
+Aggregating reports from the Traffic Automation System (TAS) will allow authorities and stakeholders to analyze key performance indicators (KPIs), understand trends in traffic violations, and evaluate the system’s effectiveness in improving traffic management. Below are examples of aggregated reports that could be generated from the data collected, organized by specific focus areas:
+
+1. Violation Report
+Purpose: Track violations across different traffic types (motorcyclists, cyclists, vehicles) and understand trends in rule-breaking.
+Key Metrics:
+Total number of violations detected
+Breakdown of violations by type (e.g., red-light jumping, speeding, not wearing helmets)
+Violation rate by location (hotspots for violations)
+Violation rate by time of day/week (peak violation times)
+Number of repeat offenders
+Fines generated from violations
+Sample Report:
+Violation Type	Total Violations	Location	Peak Time	Repeat Offenders	Fines Generated
+Red-light Jumping	1,500	Intersection A	5:00 PM - 7:00 PM	30%	$15,000
+Speeding	1,200	Intersection B	8:00 AM - 10:00 AM	25%	$12,000
+Not Wearing Helmet	800	Intersection C	6:00 AM - 8:00 AM	15%	$8,000
+
+2. Traffic Flow Report
+Purpose: Analyze the overall flow of traffic and identify areas with heavy congestion or inefficient flow.
+Key Metrics:
+Average speed of vehicles and motorcyclists
+Traffic volume per intersection
+Peak traffic hours
+Impact of signal timing adjustments
+Lane occupancy (for motorcyclists and cyclists)
+Sample Report:
+Location	Average Speed	Traffic Volume (vehicles/hour)	Peak Hours	Signal Timing Adjustment
+Intersection A	25 mph	1,000	4:00 PM - 6:00 PM	Increased green light time
+Intersection B	30 mph	800	7:00 AM - 9:00 AM	No change
+Intersection C	15 mph	1,200	3:00 PM - 5:00 PM	Extended signal cycles
+
+3. Rider Behavior Analysis
+Purpose: Understand rider behavior (motorcyclists and cyclists) in terms of rule compliance, frequency of violations, and overall safety.
+Key Metrics:
+Percentage of riders wearing helmets
+Frequency of speed violations by riders
+Time spent in dedicated motorcycle or bicycle lanes
+Rider compliance with traffic signals
+Number of accidents involving riders
+Sample Report:
+Rider Type	Helmet Usage (%)	Speeding Violations (%)	Lane Discipline (%)	Accidents Involving Riders	Total Riders
+Motorcyclists	75%	20%	90%	15	1,200
+Cyclists	85%	12%	80%	5	600
+
+4. Traffic Signal Efficiency Report
+Purpose: Measure the effectiveness of dynamic traffic signal adjustments based on real-time traffic data.
+Key Metrics:
+Average wait times at signals
+Reduction in congestion due to dynamic signal adjustments
+Effectiveness of traffic light synchronization (across multiple intersections)
+Number of traffic signal faults or errors
+Sample Report:
+Location	Average Wait Time	Signal Adjustment Impact (%)	Traffic Congestion Reduction (%)	Signal Faults
+Intersection A	2 minutes	30%	25%	1
+Intersection B	3 minutes	20%	10%	0
+Intersection C	1 minute	40%	35%	0
+
+5. Revenue and Fine Report
+Purpose: Track the financial aspect of the system, including fines and penalties collected due to traffic violations.
+Key Metrics:
+Total revenue generated from fines
+Breakdown of fines by violation type
+Revenue per location or intersection
+Percentage of fines paid vs. outstanding
+Sample Report:
+Violation Type	Fines Issued	Revenue Generated	Outstanding Fines (%)
+Red-light Jumping	1,500	$15,000	5%
+Speeding	1,200	$12,000	10%
+Not Wearing Helmet	800	$8,000	8%
+
+6. Public Awareness Campaign Effectiveness Report
+Purpose: Measure the impact of public awareness and educational campaigns on rider behavior.
+Key Metrics:
+Change in violation rates post-campaign
+Engagement with awareness content (e.g., social media, apps)
+Surveys or feedback indicating public perception of the campaign
+Sample Report:
+Campaign Type	Pre-Campaign Violations	Post-Campaign Violations	Change in Violations (%)	Engagement Rate (%)
+Helmet Safety Campaign	500	350	-30%	60%
+Speeding Awareness	1,000	850	-15%	45%
+Lane Discipline Education	800	600	-25%	50%
+
+7. Infrastructure Development Report
+Purpose: Analyze the impact of dedicated lanes for motorcycles, cyclists, and general infrastructure improvements on traffic flow.
+Key Metrics:
+Traffic flow before and after infrastructure changes
+Reduction in violations in newly designed lanes
+Utilization rates of new infrastructure
+Sample Report:
+Infrastructure Change	Before Traffic Flow (vehicles/hour)	After Traffic Flow (vehicles/hour)	Violations Before	Violations After
+Dedicated Motorcycle Lane	1,000	1,200	50	20
+Bicycle Lane Creation	600	800	30	15
+
+Conclusion
+Aggregating these reports allows authorities to gain a comprehensive view of traffic management performance and rider behavior, providing actionable insights to optimize traffic flow, reduce violations, and improve public safety. The data-driven approach can identify hotspots for violations, predict trends in rider behavior, and evaluate the impact of policy changes such as new lanes or awareness campaigns. These reports not only help in real-time decision-making but also provide long-term insights for infrastructure planning and public education.
+
+
+
+
+
+
+
