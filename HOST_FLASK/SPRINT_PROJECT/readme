@@ -1,0 +1,7 @@
+C:\Users\RUTTAMKA\B106\Scripts\activate
+
+pip install pytest pytest-flask
+
+set PYTHONPATH=C:\testing\GROUP3\HOST_FLASK\SPRINT_PROJECT 
+echo %PYTHONPATH%
+pytest
